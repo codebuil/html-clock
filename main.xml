@@ -3,9 +3,26 @@
   xmlns:android="http://schemas.android.com/apk/res/android" 
     style="@style/greens">
 
-<WebView
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text=". . . "
+    android:onClick="onOk_click"
+    android:visibility="visible"
+     />
+
+   <EditText
+   android:id="@+id/codes"
+    android:layout_width="fill_parent"
+    android:layout_height="0px"
+     android:background="#22ff22"
+    android:textColor="#000000"
+    android:visibility="invisible"
+     />
+      <WebView
    android:id="@+id/webview"
    android:layout_width="fill_parent"
    android:layout_height="fill_parent"
+   android:visibility="visible"
 />
 </LinearLayout>
