@@ -51,13 +51,13 @@ public class MainActivity extends Activity
         setContentView(R.layout.main);
         a=false;
 		final EditText codes= (EditText) findViewById(R.id.codes);
-		codes.setText( "<html><body  bgcolor='#00ff00' onload='setTimeout(myFunction, 100); '><h1><p id='demo'></p></h1><script>function myFunction() {document.getElementById(\"demo\").innerHTML = Date();setTimeout(myFunction, 1000);}</script></body></html>");
-
+		codes.setText( "<html><body  bgcolor='#00ff00' onload='setTimeout(myFunction, 100); '><h1><p id='demo'></p></h1><script>function myFunction() {const Dates=new Date();document.getElementById(\"demo\").innerHTML = Dates.getHours().toString()+\":\"+Dates.getMinutes().toString()+\":\"+Dates.getSeconds().toString();setTimeout(myFunction, 1000);}</script></body></html>");
 		WebView browser = (WebView) findViewById(R.id.webview);
 		browser.getSettings().setJavaScriptEnabled(true);
 
-		String pages= "<html><body  bgcolor='#00ff00' onload='setTimeout(myFunction, 100); '><h1><p id='demo'></p></h1><script>function myFunction() {document.getElementById(\"demo\").innerHTML = Date();setTimeout(myFunction, 1000);}</script></body></html>";
-		browser.loadData(pages, "text/html", "UTF-8");
+		String pages= "<html><body  bgcolor='#00ff00' onload='setTimeout(myFunction, 100); '><h1><p id='demo'></p></h1><script>function myFunction() {const Dates=new Date();document.getElementById(\"demo\").innerHTML = Dates.getHours().toString()+\":\"+Dates.getMinutes().toString()+\":\"+Dates.getSeconds().toString();setTimeout(myFunction, 1000);}</script></body></html>";
+		
+         browser.loadData(pages, "text/html", "UTF-8");
 
 
 
